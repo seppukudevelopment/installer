@@ -83,7 +83,7 @@ tasks {
 
     jar {
         manifest {
-            attributes["Main-Class"] = "MainKt"
+            attributes["Main-Class"] = "pw.seppuku.installer.MainKt"
         }
     }
 }

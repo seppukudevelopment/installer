@@ -23,7 +23,7 @@ object VanillaView : View("Seppuku installer for Vanilla") {
         thread {
             val installThread = thread {
                 val forgeInstaller =
-                    ForgeInstaller(URL("https://files.minecraftforge.net/maven/net/minecraftforge/forge/1.12.2-14.23.5.2854/forge-1.12.2-14.23.5.2854-installer.jar"))
+                    ForgeInstaller(URL("https://maven.minecraftforge.net/net/minecraftforge/forge/1.12.2-14.23.5.2860/forge-1.12.2-14.23.5.2860-installer.jar"))
                 forgeInstaller.install()
 
                 val seppukuInstaller =

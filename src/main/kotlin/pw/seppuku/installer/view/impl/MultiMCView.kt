@@ -31,15 +31,15 @@ object MultiMCView : View("Seppuku installer for MultiMC") {
             startedInstalling = true
 
             thread {
-                val logoStream = BufferedInputStream(URL("https://wine.github.io/seppuku/logo.png").openStream())
+                val logoStream = BufferedInputStream(URL("https://seppuku.pw/images/seppuku_logo.png").openStream())
                 Files.copy(logoStream, Paths.get(directory!!.path + "/icons/seppuku_logo.png"), StandardCopyOption.REPLACE_EXISTING)
 
                 File(directory!!.path + "/instances/seppuku/.minecraft/mods/").mkdirs()
 
-                val instanceCfgStream = BufferedInputStream(URL("https://wine.github.io/seppuku/instance.cfg").openStream())
+                val instanceCfgStream = BufferedInputStream(URL("https://seppuku.pw/files/multimc/instance.cfg").openStream())
                 Files.copy(instanceCfgStream, Paths.get(directory!!.path + "/instances/seppuku/instance.cfg"), StandardCopyOption.REPLACE_EXISTING)
 
-                val mmcPackStream = BufferedInputStream(URL("https://wine.github.io/seppuku/mmc-pack.json").openStream())
+                val mmcPackStream = BufferedInputStream(URL("https://seppuku.pw/files/multimc/mmc-pack.json").openStream())
                 Files.copy(mmcPackStream, Paths.get(directory!!.path + "/instances/seppuku/mmc-pack.json"), StandardCopyOption.REPLACE_EXISTING)
 
                 val seppukuInstaller = SeppukuInstaller(File(directory!!.path + "/instances/seppuku/.minecraft/"))
